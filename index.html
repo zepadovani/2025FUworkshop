@@ -718,11 +718,17 @@ Array.from(document.querySelectorAll('video')).forEach(video => {
 </body>
 
 
+<!-- Static video elements -->
+<div id="bg-video-container" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;">
+    <video id="bg-video-08" src="fu_workshop/cristal-red.mp4" loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;"></video>
+    <video id="bg-video-14" src="fu_workshop/tijolo.mp4" loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;"></video>
+</div>
+
 <script>
-  // Map slide IDs to their video sources
-  const videoSlides = {
-    "08": "fu_workshop/cristal-red.mp4",
-    "14": "fu_workshop/tijolo.mp4"
+  // Map slide IDs to their video element IDs
+  const videoMap = {
+    "08": "bg-video-08",
+    "14": "bg-video-14"
   };
 
   (function() {
@@ -737,109 +743,47 @@ Array.from(document.querySelectorAll('video')).forEach(video => {
     document.addEventListener("impress:stepenter", function (event) {
       var step = event.target;
       var wrapper = document.querySelector('.wrapper');
-      
-      // Check if the current step is one of our video slides
-      if (videoSlides.hasOwnProperty(step.id)) { 
-        var videoSrc = videoSlides[step.id];
-        var videoId = "bg-video-" + step.id;
-        var existingVideo = document.getElementById(videoId);
+      var currentVideoId = videoMap[step.id];
 
-        // Make wrapper transparent so video shows through
-        if (wrapper) {
+      // 1. Handle Wrapper Transparency
+      if (currentVideoId) {
+         if (wrapper) {
             wrapper.style.transition = "background-color 1s ease-in-out";
             wrapper.style.backgroundColor = "transparent";
-        }
-        
-        if (!existingVideo) {
-            var video = document.createElement("video");
-            video.id = videoId;
-            video.src = videoSrc; 
-            video.loop = true;
-            video.muted = true;
-            video.autoplay = true;
-            video.playsInline = true;
-            
-            // Fullscreen background styles
-            video.style.position = "fixed";
-            video.style.top = "0";
-            video.style.left = "0";
-            video.style.width = "100vw";
-            video.style.height = "100vh";
-            video.style.objectFit = "cover";
-            video.style.zIndex = "-1"; 
-            video.style.opacity = "0";
-            video.style.transition = "opacity 1s ease-in-out";
-            
-            // Override global padding/margin
-            video.style.padding = "0";
-            video.style.margin = "0";
-            video.style.border = "none";
-            
-            // Append to body so it's behind the transparent wrapper
-            document.body.appendChild(video);
-            
-            // Trigger reflow
-            video.getBoundingClientRect();
-            
-            var playPromise = video.play();
-            
-            if (playPromise !== undefined) {
-              playPromise.then(function() {
-                video.style.opacity = "1";
-              })
-              .catch(function(error) {
-                console.error("Video play error:", error);
-              });
-            } else {
-                video.style.opacity = "1";
-            }
-            
-        } else {
-            existingVideo.style.display = "block";
-            requestAnimationFrame(function() {
-                existingVideo.style.opacity = "1";
-            });
-            existingVideo.play().catch(function(e) { console.error("Resume play error:", e); });
-        }
+         }
       } else {
-          // Restore wrapper background
-          if (wrapper) wrapper.style.backgroundColor = "";
-          
-          // Fade out and remove ALL background videos
-          Object.keys(videoSlides).forEach(function(id) {
-              var vId = "bg-video-" + id;
-              var v = document.getElementById(vId);
-              if (v) {
-                  v.style.opacity = "0";
-                  setTimeout(function() {
-                      if (v.parentNode && v.style.opacity === "0") {
-                          v.parentNode.removeChild(v);
-                      }
-                  }, 1000); 
-              }
-          });
+         if (wrapper) wrapper.style.backgroundColor = "";
       }
-    });
-    
-    document.addEventListener("impress:stepleave", function (event) {
-       var step = event.target;
-       // If leaving a video slide, trigger cleanup (though stepenter of next slide handles it too, this is safer for transitions)
-       if (videoSlides.hasOwnProperty(step.id)) {
-          var wrapper = document.querySelector('.wrapper');
-          if (wrapper) wrapper.style.backgroundColor = ""; // Restore background immediately on leave
-          
-          var videoId = "bg-video-" + step.id;
-          var video = document.getElementById(videoId);
-          if (video) {
+
+      // 2. Manage Videos
+      Object.keys(videoMap).forEach(function(slideId) {
+          var vId = videoMap[slideId];
+          var video = document.getElementById(vId);
+          if (!video) return;
+
+          if (vId === currentVideoId) {
+              // Show and Play
+              // video.style.display = "block"; 
+              var playPromise = video.play();
+              if (playPromise !== undefined) {
+                  playPromise.then(() => {
+                      video.style.opacity = "1";
+                  }).catch(e => console.error("Play error for " + vId, e));
+              } else {
+                  video.style.opacity = "1";
+              }
+          } else {
+              // Hide and Pause
               video.style.opacity = "0";
               setTimeout(function() {
-                  if (video.parentNode && video.style.opacity === "0") {
-                      video.parentNode.removeChild(video);
+                  if (video.style.opacity === "0") {
+                      video.pause();
                   }
               }, 1000);
           }
-       }
+      });
     });
+    
   })();
 </script>
 
