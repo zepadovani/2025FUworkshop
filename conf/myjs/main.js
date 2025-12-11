@@ -83,7 +83,7 @@
         logoHtml = `
 <div id="logodiv" class="hide-logo">
 <p style="text-align: center;">
-  <a href="http://musica.ufmg.br/padovani/">
+  <a href="https://musica.ufmg.br/padovani/">
     <img src="/conf/img/logo_ecris.svg" width="15%" style="background:none; border:none; box-shadow:none; vertical-align: middle;">
     <img src="/conf/img/logo_ufmg.svg" width="22%" style="background:none; border:none; box-shadow:none; vertical-align: middle;">
     <br/>
@@ -93,7 +93,7 @@
     }
 
     var html = `
-<div class="header">http://musica.ufmg.br/padovani</div>
+<div class="header">https://musica.ufmg.br/padovani</div>
 <div class="footer" >
   © 2018-2020 José Henrique Padovani. Adverte-se, para os devidos fins, que a imagem dos docentes, discentes e demais envolvidos,
   além do conteúdo oral e escrito das aulas assim como plataformas e mecanismos digitais desenvolvidos pelos docentes, encontram-se legalmente protegidos pela Lei no
@@ -123,11 +123,11 @@
 
 
 <p>
-  Os slides nessa página são projetados para funcionar em <b>formato paisagem</b> (<i>landscape</i>) e em <b>tela cheia</b>. No computador, utilize as <b>setas direcionais</b> (<!-- <img src="/conf/img/leftright_arrow.svg" height="20rem"> --> ↔ ) para navegar pelos slides. No tablet/celular, deslize para percorrer.<br/><br/>
+  Os slides nessa página são projetados para funcionar em <b>formato paisagem</b> (<i>landscape</i>) e em <b>tela cheia</b>. No computador, utilize as <b>setas direcionais</b> (<!-- <img src="conf/img/leftright_arrow.svg" height="20rem"> --> ↔ ) para navegar pelos slides. No tablet/celular, deslize para percorrer.<br/><br/>
   Utilize os <b>ícones no menu deslizante</b> – à esquerda, no topo da página – para:
 </p>
 <ul style="color: #222; font-size: 90%; padding: 2.2rem; text-align: justify; padding-left: 4%;">
-  <li>▪ <i id="touchicon" class="mdi mdi-home" style="font-size: inherit; color: rgb(200,16,46);"></i> - acessar a <b>página da disciplina no site http://musica.ufmg.br/padovani</b></li>
+  <li>▪ <i id="touchicon" class="mdi mdi-home" style="font-size: inherit; color: rgb(200,16,46);"></i> - acessar a <b>página da disciplina no site https://musica.ufmg.br/padovani</b></li>
   <li>▪ <i id="touchicon" class="mdi mdi-school" style="font-size: inherit; color: rgb(200,16,46);"></i> - acessar a <b>página da disciplina no <a href="https://virtual.ufmg.br/20201/course/view.php?id=2812#section-1">Moodle/UFMG Virtual</a></b></li>
   <li>▪ <i id="touchicon" class="mdi mdi-format-list-numbered" style="font-size: inherit; color: rgb(200,16,46);"></i> - abrir aba com <b>índice de slides</b> principais</li>
   <li>▪ <i id="touchicon" class="mdi mdi-printer" style="font-size: inherit; color: rgb(200,16,46);"></i> - <b>imprimir/gerar pdf</b> dos slides sem os elementos dinâmicos</li>
