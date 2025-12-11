@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimal-ui"> -->
+<link rel='shortcut icon' type='image/x-icon' href="conf/favicon.ico" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes">
+<title>
+  listening with machines, crafting transductions
+</title>
+<meta name="autor" content="José Henrique Padovani " />
+<meta name="author" content="José Henrique Padovani " />
+<meta name="viewport" content="width=1280" />
+<meta name="description" content="Plataforma/template para ensino em modalidade remota, apoio didátio e/ou Ensino à Distância." />
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<!-- <link href="conf/mdi/font/css/materialdesignicons.min.css" rel="stylesheet" /> -->
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet" />
+<!-- <link href="conf/js/AudioPlayer/css/audioplayer.css" rel="stylesheet"/>
+<link href="conf/js/video.js/dist/video-js.min.css" rel="stylesheet"> -->
+<!-- <link href="conf/css/coresTexto.css" rel="stylesheet" /> -->
+<!-- <link href="conf/css/padovani_impress_fonts.css" rel="stylesheet" /> -->
+<!-- <link rel='stylesheet' href='https://unpkg.com/plyr@3/dist/plyr.css'> -->
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+
+<!-- <script src="conf/js/vexflow/releases/vexflow-debug.js"></script> -->
+<!-- <link href="conf/css/padovani_fonts.css" rel="stylesheet" /> -->
+<!-- <link href="conf/css/layout.css" rel="stylesheet" /> -->
+<link href="conf/css/main.css" rel="stylesheet" />
+
+<!-- Matomo -->
+<script type="text/javascript">
+var _paq = window._paq = window._paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+  var u="//josehenriquepadovani.com/analytics/";
+  _paq.push(['setTrackerUrl', u+'matomo.php']);
+  _paq.push(['setSiteId', '1']);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+<!-- End Matomo Code -->
+
+  <style>
+  html {
+    --plyr-color-main: #C8102E;
+  }
+
+  /* .player {
+
+  } */
+
+  /* .playeraudio {
+  --plyr-color-main: #C8102E;
+  margin: 0px auto;
+  max-width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  } */
+
+  .frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    letter-spacing: 0.001em;
+    text-align: left;
+    line-height: 1rem;
+    padding: 0.01em;
+    height:1.7rem;
+    font-size: 70%
+  }
+  .frac > span {
+    display: block;
+    padding: 0.01em;
+  }
+  .frac span.bottom {
+
+  }
+  .frac span.symbol {
+    display: none;
+  }
+
+  </style>
+</head>
+
+<body class="impress-not-supported">
+  <div class='wrapper'>
+
+<div id="impress" class="impressdiv" data-max-scale="1" data-min-scale="0.95">
+
+
+
+
+<div id="01" data-title="Capa/Início" class="step slide" data-x="0" data-y="0"  >
+  <div style="padding-top: 23vmin;">
+
+    <p style="font-size:3rem; text-align:center;  text-shadow: none">
+      <b>
+        Listening with machines, crafting transductions</b><br/>
+    </p>
+
+    <p style="font-size:1.5rem; padding-top: 3vmin; text-align:center;  text-shadow: none">
+      <b>technodiversity, creative tools, and critical perspectives in research-creation practices</b>
+    </p>
+
+
+
+    <div style="float:right; width: 49vmax; padding-top: 14vmin;">
+    <p style="font-size:1.8rem; text-align:right; padding-right: 23vmin; line-height: 2rem; padding-top: 0.7rem; color:#202020;  text-shadow: none; text-align: left;">
+        Dr. José Henrique Padovani
+        </p>
+    
+      
+      <p style="font-size:1.3rem; font-weight: 500; text-align:right; padding-left: 2rem; padding-right: 23vmin; line-height: 2rem; padding-top: 0.7rem; color:#202020;  text-shadow: none; text-align: left;">
+        Espaço de Criação e Investigação Sonora [ECrIS]<br/>
+        Escola de Música<br/>
+        Universidade Federal de Minas Gerais [UFMG]
+      </p>
+    </div>
+
+    <div style="position: absolute; bottom: 12vmin; width: 90%; height: 8vmin; display: flex; justify-content: space-evenly; align-items: center;">
+      <img src="fu_workshop/logo_FU.svg" alt="Freie Universität Berlin" style="height: 6vmin;"/>
+      <img src="fu_workshop/logo_ecris.svg" alt="UFMG" style="height: 10vmin;"/>
+      <img src="fu_workshop/logo_ufmg.svg" alt="UFMG" style="height: 5vmin;"/>
+      <img src="fu_workshop/logo_cnpq.svg" alt="UFMG" style="height: 5vmin;"/>
+      <img src="fu_workshop/logo_fapemig.svg" alt="UFMG" style="height: 8vmin;"/>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<div id="02" data-title="structure" class="step slide" data-rel-x="2000" data-y="0">
+  <div  style="padding-top: 10vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 3.5rem">
+    <ol style="list-style: decimal; margin-left: 2rem;">
+      <li class="substep" style="margin-bottom: 1em;">critical/epistemical: from the concept of transduction to the concept of technodiversity <f60>[passing by some relevant questions concerning art/technology/politics/ecology]</f60></li>
+      <li class="substep" style="margin-bottom: 1em;">practical: do/think about these practices within our contexts and with sounds tools we use</li>
+      <li class="substep">dialogical: engaging in a more dialectic discussion on the topics and activities</li>
+    </ol>
+  </div>
+</div>
+
+
+<div id="03" data-title="Context & Questions" class="step slide" data-rel-x="2000" data-y="0">
+  <div  style="padding-top: 10vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 3.5rem">
+    <p><strong>How do we relate to technology while listening/creating?</strong></p>
+    <ul>
+      <li class="substep" style="margin-bottom: 1em; padding-top: 2rem;">What <roxo1>assumptions shape/conform our relationships</roxo1> with technical objects and digital tools?</li>
+      <li class="substep" style="margin-bottom: 1em;">What <vermelar>epistemological positions</vermelar> and <vermelho1>body/tool/world</vermelho1> couplings do we accept and reproduce without major critical considerations?</li>
+      <li class="substep" style="margin-bottom: 1em;">Conversely, what do <verde1>we actively seek to invention and experiment with</verde1>?</li>
+    </ul>
+  </div>
+</div>
+
+<div id="04" data-title="Core Concepts" class="step slide" data-x="2000" data-rel-y="1000">
+  <div  style="padding-top: 10vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem;  font-weight: 300; line-height: 3.5rem; width: vmax;">
+    <p style="padding-bottom: 6rem;"><strong>Three main concepts:</strong></p>
+    <ul>
+      <li class="substep" style="padding-bottom: 1rem; padding-left: 8rem "><strong><i>Transduction</i></li>
+      <li class="substep" style="padding-bottom: 5rem; padding-left: 8rem"><strong><i>Technodiversity</i></strong></li>
+      <li class="substep" style="padding-bottom: 1rem; padding-left: 8rem"><strong><i>Inscription</i></strong> <f80>[material / symbolic / signal / digital] - (practical part) </f80> 
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="05" data-title="transduction - general" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div  style="padding-top: 1vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.3rem; line-height: 3.5rem">
+    <h2>transduction</h2>
+    <br/>
+    <p class="substep">
+    Etymology: <verde3><i>trans-</i></verde3> <f70>[across]</f70> + <azul3><i>-duction</i></azul3> <f70>[leading]</f70><br/>
+    <br/>
+    to lead across / to carry over 
+    </p>
+
+    <p class="substep">
+    Usual meaning: <azul1>interconversion of signals</azul1> between different <vermelho1>forms of energy</vermelho1> <br/><f70>[e.g., sound to electrical, electrical to mechanical, etc.]</f70>
+  </p>
+    
+
+    <!-- <br/><br/>
+    Critique of <strong>hylomorphism</strong>: the notion that form and matter are separate entities that combine to create objects. -->
+  
+    <!-- <p style="text-align: center; padding-top: 1vmin">
+    Brick = Form + Matter </p> -->
+
+  </div>
+</div>
+
+<div id="06" data-title="transduction Simondon" class="step slide" data-rel-x="0" data-rel-y="1000">
+  <div style="padding-top: 5vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 4.4rem; text-align: justify; font-weight: 300;">
+    
+    Gilbert Simondon -<i><b>transduction</b></i> is a more general concept, related to:
+    <br/>
+    <ul style="padding-top: 3rem;">
+    <li class="substep" style="padding-bottom: 3rem; padding-left: 8rem ">
+    1. <vermelho1>energetic propagation</vermelho1> in a given material/environment</li>
+    <li class="substep" style="padding-bottom: 3rem; padding-left: 8rem ">
+    2. structuration of a <roxo1>domain</roxo1></li>
+    <li class="substep" style="padding-bottom: 3rem; padding-left: 8rem ">
+    3. <verde3><i>information</i></verde3> <f70>[as a process and a verb, more than a noum]</f70></li>
+    <li class="substep" style="padding-bottom: 3rem; padding-left: 8rem ">
+    4. <azul4>individuation/ontogenesis</azul4> within an <rosa1><i>milieu associé</i></rosa1></li>
+    </ul>
+  </div> 
+</div>
+
+
+<div id="07" data-title="by transduction we mean" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div  style="padding-top: 30vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 4.4rem; text-align: justify; font-weight: 400;">
+        
+    <blockquote style="line-height: 3.3rem;">
+      <i>
+      By transduction we mean a physical, biological, mental, or social operation <vermelho1>through which an activity propagates incrementally</vermelho1> <azul3>within a domain</azul3> by <verde3>basing this propagation on a structuration of the domain</verde3> operated <roxo1>from one region to another</roxo1>: <laranja1>each structural region serves as a principle and model</laranja1>, as an <rosa1>initiator for constituting the following region</rosa1>, such that a modification thereby extends progressively throughout this structuring operation. (...)
+      </i>
+    </blockquote>
+  </div>
+</div>
+
+<div id="08" data-title="quote b" class="step slide" data-rel-x="0" data-rel-y="1000">
+  <div class="substep" style="padding-top: 55vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 4.4rem; text-align: justify; font-weight: 300;">
+        
+    <blockquote style="line-height: 3.3rem; color:#fde4c9">
+      <i>
+    (...) The simplest image of the transductive operation is provided by the crystal, which, starting from a tiny germ, increases and extends following all the directions in its supersaturated mother liquor: each previously constituted molecular layer serves as the structuring basis for the layer in the process of forming; the result is an amplifying reticular structure. (Simondon 2020, p. 13)
+    </i>
+    </blockquote>
+  </div>
+</div>
+
+
+<div id="09" data-title="Implications for Sound" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div  style="padding-top: 10vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 3.5rem; font-weight: 400;">
+
+  <i>Transduction</i> is also a critique/refusal of  <i>hylomorphism</i>:
+
+    <p class="substep">
+      <img src="fu_workshop/hilemorfismo.png" alt="Hylomorphism" style="width: 75vmax; display: block; margin: 2vmin auto;"/>
+      </p>
+    <p class="substep">
+      Doctrine or epistemic point-of-view according to which things are ontologically constituted of <vermelho1><i>matter</i></vermelho1> <f70>[<vermelho1>ὕλη</vermelho1>]</f70> + <azul3><i>form</i></azul3> <f70>[<azul3>μορφή</azul3>]</f70>.<br/>
+    </p>  
+    
+
+  </div>
+</div>
+
+
+<div id="10" data-title="The Brick Example" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div  style="padding-top: 10vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 3.5rem">
+    <p><strong>Simondon's Critique:</strong> Hylomorphism comes from not dirtying one's hands.</p>
+    <ul class="spaced-list">
+      <li class="substep">
+        <azul3>
+        <strong>Mold/"Form": </strong></azul3><f80> Made of wood or other resistant material, allowing detachment (using sand), is materially conceived to be reusable.</f80></li>
+      <li class="substep">
+        <vermelho1>
+        <strong>Clay/"Matter": </strong></vermelho1> <f80>Must be colloidal, homogeneous, have specific consistency and "microformal" properties to avoid cracking, for instance.</f80></li>
+    </ul>
+    <p class="substep" style="margin-top: 2rem; padding-left: -1rem; font-size: 2rem;"><strong>Thinking about technology is deeply related to the experience of <laranja1>doing/making</laranja1></strong>. It is <rosa1>thinking-while-doing</rosa1>: a practical and material engagement with the technical process, with the real conditions of production, with the place and the tools used to make an artifact.</p>
+  </div>
+</div>
+
+<div id="11" data-title="Leroi-Gourhan" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div  style="padding-top: 10vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.3rem; line-height: 3.3rem; text-align: justify;">
+
+    Precisely, what an archaeologist must seek to reenact/understand is this thinking-doing that is accessible and inscribed in the technical object:
+    <blockquote class="substep" style="font-size: 2.5rem; line-height: 3.8rem; padding-top: 2rem; font-weight: 300;">
+      <i>When one recedes into the past... it is only the products of techniques and art that allow us to go further back in time... Art itself disappears quite quickly, and beyond 50,000 years, <strong><vermelho1>only techniques allow us to trace the human stream back to its origins</vermelho1></strong>...</i> (Leroi-Gourhan 1984, p. 11)</blockquote><br/>
+      
+    </blockquote>
+  </div>
+</div>
+
+
+<!-- 
+<div id="12" data-title="Transduction in Making" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div  style="padding-top: 10vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.5rem; line-height: 3.5rem">
+    <p><strong>Transduction in the Brick:</strong></p>
+    <ul class="spaced-list">
+      <li class="substep">Lower order elements (molecules) inform subsequent parts.</li>
+      <li class="substep">Form and energy are modulated by an external force (the maker).</li>
+      <li class="substep"><strong>Individuation:</strong> An operation of ontogenesis (bringing into existence).</li>
+    </ul>
+  </div>
+</div> -->
+
+<div id="13" data-title="Simondon Quote 1" class="step slide" data-x="2000" data-rel-y="1000">
+  <div  style="padding-top: 5vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.4rem; line-height: 3.2rem; text-align: justify; font-weight: 400;">
+    <blockquote style="line-height: 3rem;">
+      <i>
+      The technical operation that <verde3>imposes a form on a passive and un-determined matter</verde3> isn’t just an operation considered abstractly by the <vermelho1>spectator who sees what enters the workshop</vermelho1> and <azul1>what leaves it without knowing the elaboration properly speaking</azul1>. This is essentially the operation <rosa1>controlled by the free man and executed by the slave</rosa1>; the free man chooses the matter—which is undetermined because it suffices to designate it generically by the name substance—without seeing it, without manipulating it, and without preparing it: the object will be made of wood or iron or clay. <azul3>The veritable passivity of the matter</azul3> is its abstract <roxo1>availability behind the given order that other men will execute</roxo1>. The passivity is the <laranja1>passivity of the human mediation that will procure the matter</laranja1>. The <roxo1>form corresponds to what the man who commands has thought by himself</roxo1> and what he must express positively when he gives his orders: the <vermelho1>form is therefore of the order</vermelho1> of the expressible; it is prominently active because it is what is imposed on those who manipulate the matter; <azul1>it is the very content of the order, that through which he governs</azul1>. (...)
+      </i>
+    </blockquote>
+  </div>
+</div>
+
+<div id="14" data-title="Simondon Quote 2" class="step slide" data-rel-x="0" data-rel-y="1000">
+  <div class="substep" style="padding-top: 68vmin; padding-left: 8vmin;padding-right: 8vmin; font-size:2.6rem; line-height: 3.2rem; text-align: justify; font-weight: 400;">
+    <blockquote style="line-height: 3rem; color:hsl(81, 25%, 13%); background-color: hsla(82, 24%, 62%, 0.035); padding: 2rem;">
+      <i>
+       <b>The distinction between matter and form, between the soul and the body, reflects a city that contains citizens in opposition to slaves</b>.</i> (Simondon 2020)
+    </blockquote>
+  </div>
+</div>
+
+<div id="15" data-title="Extension and Mediation" class="step slide" data-rel-x="2000" data-rel-y="-1000">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify; font-weight: 400;">
+    <h2>Extension and Mediation</h2>
+    <p style="margin-top: 2rem;">
+      Regarding technology, and the tools and instruments that extend, protect, and/or transform our senses, bodies, and actions in/of the world, the <strong>transductive chain</strong>—which goes from the world around me, passes through objects and technical elements, reaches my body and my cognitive system—leads us to the question and provocation posed, in different ways, by <strong>Gregory Bateson</strong> and <strong>Bruno Latour</strong>.
+    </p>
+  </div>
+</div>
+
+<div id="16" data-title="Bateson Quote" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify;">
+    <p><strong>Bateson (1987):</strong></p>
+    <blockquote class="substep" style="margin-top: 2rem; padding-top: 5rem; font-size: 2.4rem; font-weight: 400; line-height: 3.9rem;">
+      <i>But what about “me”? Suppose I am a blind man, and I use a stick. I go tap, tap, tap. <vermelho1>Where do I start?</vermelho1> Is my mental system bounded <azul3>at the handle of the stick</azul3>? Is it bounded <verde3>by my skin</verde3>? Does it start <roxo1>halfway up the stick</roxo1>? Does it start <rosa1>at the tip of the stick</rosa1>? But these are nonsense questions. <vermelho1>The stick is a pathway along which transforms of difference are being transmitted</vermelho1>.</i> (Bateson, 1987)
+    </blockquote>
+  </div>
+</div>
+
+<div id="17" data-title="Latour Quote" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify;">
+    <p><strong>Latour (1994), on the other hand, suggests that artifacts are more than just things:</strong></p>
+    <blockquote  class="substep" style="margin-top: 2rem; padding-top: 4rem; font-size: 2.4rem; font-weight: 400; line-height: 3.9rem;">
+      <i>...if our challenge is to be met, it will not be met by considering artifacts as things. They deserve better. They deserve to be housed in our intellectual culture as full-fledged social actors. <vermelho1>They mediate our actions? No, they are us.</vermelho1></i> (Latour, 1994)
+    </blockquote>
+  </div>
+</div>
+
+<div id="18" data-title="Technodiversity" class="step slide" data-x="2000" data-rel-y="2000">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify; font-weight: 400; color:black">
+    <h2>technodiversity</h2>
+    <p style="margin-top: 2rem;">
+      To build a positive relationship with technology is, also, to develop or own ways to <verde3>“seize the means of production”</verde3>: not merely to possess them, but to manage to acquire a <azul1>higher degree of engagement, creativity, and dialectical relationship</azul1> with them.
+    </p>
+  </div>
+</div>
+
+<div id="19" data-title="Simondon Alienation" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify; font-weight: 400;">
+    <p>
+      As Simondon points out, even the <vermelho1>owner of the industry is alienated</vermelho1> in the capitalist production system: precisely because he does not engage with the technical process and with the particularities of the technical objects and machines he owns.
+    </p>
+    <p class="substep" style="margin-top: 2rem;">
+      Although the worker’s relationship with the machine is impoverished by a system prioritizing disciplined repetition over creative engagement, they still grapple with its particularities daily, understanding its failures and potentials. <rosa1>The industry owner, however, lacks even this practical contact.</rosa1>
+    </p>
+  </div>
+</div>
+
+<div id="20" data-title="Consumer Alienation" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify; font-weight: 400;">
+    <p>
+      We could hypothesize that this profound alienation anticipates the <roxo1>symbolic and cognitive misery</roxo1> projected onto the consumer products and modes of technology engagement their industry manufactures: at least this is a plausible interpretation for the social networks, smartphones, and digital platforms that dominate our current technological landscape, deeply marked by <laranja1>modes of disciplined consumption and passive engagement</laranja1>.
+    </p>
+  </div>
+</div>
+
+<div id="21" data-title="Stiegler Quote" class="step slide" data-rel-x="0" data-rel-y="1000">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify; font-weight: 400;">
+    <p><strong>Bernard Stiegler highlights this issue when he discusses the concept of proletarization of consumers:</strong></p>
+    <blockquote class="substep" style="margin-top: 2rem; font-size: 2.4rem; font-weight: 400; line-height: 3.5rem;">
+      <i>But capitalism, after optimizing production—that is, the conditions of subsistence—through the mechanization of production, ends up <vermelho1>proletarianizing not only the producer, but also the consumer</vermelho1>, who has nothing left to sell but their soul, that is, their conscious time: it is a matter of subjecting all existence to the imperatives of subsistence…</i> (Stiegler 2013)
+    </blockquote>
+  </div>
+</div>
+
+<div id="22" data-title="Yuk Hui Intro" class="step slide" data-rel-x="2000" data-rel-y="-1000">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify; font-weight: 400;">
+    <p>
+      Such symbolic, anthropological, and techno-cultural impoverishment is associated, by <strong>Yuk Hui</strong>, with the hegemony of a universalist and positivist view of technology, which he terms <azul3>monotechnology</azul3>, linking it to the correlated notion of <verde3>monoculture</verde3>.
+    </p>
+  </div>
+</div>
+
+<div id="23" data-title="Yuk Hui Quote" class="step slide" data-rel-x="0" data-rel-y="1000">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify; font-weight: 400;">
+    <blockquote style="font-size: 2.2rem; font-weight: 400; line-height: 3.2rem;">
+      <i>...what Vandana Shiva called the “monoculture of the mind” is omnipresent in the capitalist logic of globalization; we, therefore, end up having <azul3>monotechnology</azul3>, which recklessly views itself as the only option. The <vermelho1>“monoculture of the mind”, which endangers both biodiversity and noodiversity</vermelho1>, suggests that the key to resolving this problem is to return to the discourse of <verde3>technodiversity</verde3>. Therefore, <azul3>the matrix of biodiversity, noodiversity, and technodiversity </azul3>form a more comprehensive framework than the dialectics between nature and technology for understanding the planetary condition. (...) ...without differentiation and diversification, it is impossible to talk about difference and diversity. <rosa1><b>Diversity is not only to be maintained, but it also has to be constantly created.</b></rosa1></i> (Hui 2024, p. 225-226)
+    </blockquote>
+  </div>
+</div>
+
+<div id="24" data-title="Defining Technodiversity" class="step slide" data-rel-x="2000" data-rel-y="-1000">
+  <div style="padding-top: 8vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.0rem; line-height: 3.8rem; text-align: justify; font-weight: 400;">
+    <p>
+      In parallel with the notion of <strong>biodiversity</strong>, which emphasizes the importance of biological and ecological diversity for the resilience and sustainability of ecosystems, and the notion of <strong>noodiversity</strong>, which highlights cultural, epistemological, and cognitive diversity as essential for the richness of human societies, <verde3>technodiversity</verde3> proposes a <vermelho1><b>multiplicity of technical approaches, practices, and technological imaginations</b>.</vermelho1>
+    </p>
+    <p class="substep" style="margin-top: 1.5rem;">
+      This <roxo1>plurality and diversity of objects, imaginations, approaches, and technical practices</roxo1> are not only averse to a hegemonic technological universalism but are also threatened by the same forces that sustain it and which, through their arrogance and greed, destroy the diversity of life forms (biodiversity) and forms of knowledge and culture (noodiversity).
+    </p>
+  </div>
+</div>
+
+<div id="25" data-title="Technodiversity in Arts" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 8vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.0rem; line-height: 2.8rem; text-align: justify; font-weight: 400;">
+    <p>
+      If, as Stiegler argues based on Leroi-Gourhan’s ideas, technology allows for the <strong>externalization of memory and knowledge</strong>, in a moment of increasing symbolic and cognitive proletarianization, fostering <verde3>technodiversity</verde3> is also a means of <vermelho1><b>ensuring that such externalization does not result in a process of spoliation and impoverishment</b></vermelho1>.
+    </p>
+    <p class="substep" style="margin-top: 1.5rem;">
+      Fundamentally in the field of arts, whose artisan origin is deeply linked to technique and technical making, it seems strategic to foster practices that promote technodiversity. Especially in the current context, where the creative and speculative potential of machine listening/learning techniques is impoverished by uncritical anthropomorphization and a trivialization of what such metaphors can represent, it is crucial to recover what is rightfully ours, not only in terms of “copyright” or artisanal métier, but, above all, <azul1>what is proper to us in terms of imaginative power and invention</azul1>.
+    </p>
+  </div>
+</div>
+
+
+<div id="26" data-title="Inscription and Sonic Writing" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify;">
+    <h2>5 Inscription and Sonic Writing</h2>
+    <p style="margin-top: 2rem;">
+      To bridge our theoretical framework with the practical activities of this workshop, we must define the scope of <strong>inscription</strong>.
+    </p>
+    <p class="substep" style="margin-top: 2rem;">
+      Following <strong>Thor Magnusson's</strong> analysis in <i>Sonic Writing</i> (2019), we should not view musical writing merely as symbolic notation on paper. Instead, we must consider a <azul1>broader genealogy of inscription technologies</azul1> that condition our musical expression.
+    </p>
+  </div>
+</div>
+
+<div id="27" data-title="Magnusson's Modes" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify;">
+    <p>
+      Magnusson categorizes these inscriptions into <strong>distinct modes</strong>, all of which are relevant to our use of creative tools:
+    </p>
+    <ul style="margin-top: 3rem; list-style: none;">
+      <li class="substep" style="margin-bottom: 2rem;">1. <verde3>Material Inscriptions</verde3></li>
+      <li class="substep" style="margin-bottom: 2rem;">2. <azul3>Symbolic Inscriptions</azul3></li>
+      <li class="substep" style="margin-bottom: 2rem;">3. <vermelho1>Signal Inscriptions</vermelho1></li>
+      <li class="substep">4. <roxo1>Digital Writing <f80>[Computational Inscriptions]</f80></roxo1></li>
+    </ul>
+  </div>
+</div>
+
+<div id="28" data-title="Material Inscriptions" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify; font-weight: 400;">
+    <h3>1. <verde3>Material Inscriptions</verde3></h3>
+    <p style="margin-top: 3rem;">
+      How musical theory and logic are <verde3>embedded directly into the physical body of instruments</verde3> (e.g., the tuning of a string, the placement of holes on a flute).
+    </p>
+    <p class="substep" style="margin-top: 2rem; font-size: 2.8rem; text-align: center;">
+      The instrument itself is a <strong>“frozen” theory of music</strong>.
+    </p>
+  </div>
+</div>
+
+<div id="29" data-title="Symbolic Inscriptions" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify; font-weight: 400;">
+    <h3>2. <azul3>Symbolic Inscriptions</azul3></h3>
+    <p style="margin-top: 3rem;">
+      The domain of <strong>notation, code, and language</strong>.
+    </p>
+    <p class="substep" style="margin-top: 2rem;">
+      This involves the <azul1>abstraction of sound into discrete symbols</azul1> that allow for logical manipulation and transmission.
+    </p>
+  </div>
+</div>
+
+<div id="30" data-title="Signal Inscriptions" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify;">
+    <h3>3. <vermelho1>Signal Inscriptions</vermelho1></h3>
+    <p style="margin-top: 3rem;">
+      The domain of the <strong>continuous waveform</strong>, emerging with the phonograph and evolving into digital signal processing.
+    </p>
+    <p class="substep" style="margin-top: 2rem;">
+      Here, we write traces that resemble the behaviour of <vermelho1>sound waves</vermelho1> rather than symbols representing them.
+    </p>
+  </div>
+</div>
+
+<div id="31" data-title="Digital Inscriptions" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 8vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify;">
+    <h3>4. <roxo1>Digital Inscriptions</roxo1> <f80>[Computational Inscriptions]</f80></h3>
+    <p style="margin-top: 2rem;">
+      The convergence space where the previous modes collide and hybridize. Here, the distinction between the instrument (material), the score (symbolic), and the sound (signal) becomes fluid.
+    </p>
+    <p class="substep" style="margin-top: 1.5rem;">
+      Through code and algorithms, we engage in a <strong>second-order writing</strong>: writing the rules and systems that generate the sound, rather than the sound itself.
+    </p>
+    <p class="substep" style="margin-top: 1.5rem;">
+      This is the domain where <i>Machine Listening</i> and <i>Learning</i> operate, introducing a layer of agency where the inscription itself can “adapt”, “learn”, and “respond”, creating new modes of <verde3>transduction</verde3>.
+    </p>
+  </div>
+</div>
+
+<div id="32" data-title="Creative Reinscription" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.2rem; line-height: 3rem; text-align: justify;">
+    <p>
+      In the context of <i>Machine Listening</i> and <i>Machine Learning</i>, these categories converge and collapse.
+    </p>
+    <p class="substep" style="margin-top: 2rem;">
+      When we employ an algorithm to “listen” to an audio input (signal) and generate a response or process/synthesize things being informed by the incoming sounds/signals, we are engaging in a process of <rosa1><strong>creative transduction and reinscription</strong></rosa1>.
+    </p>
+    <p class="substep" style="margin-top: 2rem;">
+      This is far more interesting than the misleading anthropomorphic metaphor of <i>learning</i> or <i>listening</i> attributed to the machines or technical objects.
+    </p>
+  </div>
+</div>
+
+<div id="33" data-title="Building Transductions" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 8vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.0rem; line-height: 2.8rem; text-align: justify;">
+    <p>
+      What we are actually doing is <strong>building transductions between different inscription modes</strong>: from signal to symbol, from material to digital, from continuous to discrete.
+    </p>
+    <p class="substep" style="margin-top: 1.5rem;">
+      These processes are, in different ways, at the core of instrument building, the invention of apparatuses, and compositional techniques, for centuries.
+    </p>
+    <p class="substep" style="margin-top: 1.5rem; font-size: 1.8rem; color: #444;">
+      The invention of notation solutions, of instruments and automata, of tape music techniques, of live electronics, of granular synthesis, of algorithmic composition, of digital audio workstations, of machine learning models for sound generation—all these are <azul3>transductive processes that mediate between different inscription modes</azul3>.
+    </p>
+  </div>
+</div>
+
+<div id="34" data-title="Heuristic Tool" class="step slide" data-rel-x="2000" data-rel-y="0">
+  <div style="padding-top: 10vmin; padding-left: 8vmin; padding-right: 8vmin; font-size: 2.4rem; line-height: 3.2rem; text-align: justify;">
+    <p>
+      The practical component of this workshop will explore the machine and technical objects not as objective tools or as anthropomorphic (and somewhat narcissistic) mirrors, but as a <verde3><strong>heuristic</strong></verde3> and <azul1><strong>epistemic tools</strong></azul1> (Magnusson, 2019).
+    </p>
+    <p class="substep" style="margin-top: 3rem;">
+      That, hopefully, will allow us to develop our own means of listening, seeing, transcribing, understanding and <verde3><i>transducing</i></verde3> music and sounds, in personal and technodiverse ways.
+    </p>
+  </div>
+</div>
+
+
+<div id="overview" class="step" data-x="5500" data-y="2000" data-scale="8">
+</div>
+
+
+</div></div>
+
+
+
+</div><!-- end of wrapper -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+<script src="conf/js/jquery-color-animation/jquery.animate-colors-min.js"></script>
+<!-- <script src="conf/js/AudioPlayer/js/audioplayer.js"></script> -->
+<script src="conf/js/impress.js/js/impress.js"></script>
+<script src="conf/js/impress.js/extras/markdown/markdown.js"></script>
+<script src="conf/js/impress.js/src/plugins/rel/rel.js"></script>
+<script src="conf/js/impress.js/src/plugins/substep/substep.js"></script>
+<script src="conf/js/impress.js/src/plugins/progress/progress.js"></script>
+
+<script src="conf/myjs/main.js"></script>
+<script>
+  window.initLayout({
+    ytAddress: "",
+    menuType: "default",
+    menuItems: ["home",{"icon":"mdi-alpha-e","href":"https://ecris.cc/","target":"_blank"},"slidelist","fullscreen","menu"],
+    showLogo: false
+  });
+</script>
+<!-- <script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL'></script> -->
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<script id="rendered-js">
+// Change "{}" to your options:
+// https://github.com/sampotts/plyr/#options
+//const player = new Plyr('#player', {});
+const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
+
+// Expose player so it can be used from the console
+window.players = players;
+//# sourceURL=pen.js
+</script>
+
+<script>
+( function( document, window ) {
+  "use strict";
+
+  // Touch handler to detect swiping up and down based on window size.
+  // If the difference in Y change is bigger than 1/20 of the screen height,
+  // we simply call an appropriate API function to complete the transition.
+  var startY = 0;
+  var lastY = 0;
+  var lastDY = 0;
+  var threshold = window.innerHeight / 20;
+
+  document.addEventListener( "touchstart", function( event ) {
+    lastY = startY = event.touches[ 0 ].clientY;
+  } );
+
+  document.addEventListener( "touchmove", function( event ) {
+    var y = event.touches[ 0 ].clientY;
+    var diff = y - startY;
+
+    // To be used in touchend
+    lastDY = lastY - y;
+    lastY = y;
+
+    window.impress().swipe( diff / window.innerHeight );
+  } );
+
+  document.addEventListener( "touchend", function() {
+    var totalDiff = lastY - startY;
+    if ( Math.abs( totalDiff ) > window.innerHeight / 5 && ( totalDiff * lastDY ) <= 0 ) {
+      if ( totalDiff > window.innerHeight / 5 && lastDY <= 0 ) {
+        window.impress().prev();
+      } else if ( totalDiff < -window.innerHeight / 5 && lastDY >= 0 ) {
+        window.impress().next();
+      }
+    } else if ( Math.abs( lastDY ) > threshold ) {
+      if ( lastDY < -threshold ) {
+        window.impress().prev();
+      } else if ( lastDY > threshold ) {
+        window.impress().next();
+      }
+    } else {
+
+      // No movement - move (back) to the current slide
+      window.impress().goto( document.querySelector( "#impress .step.active" ) );
+    }
+  } );
+
+  document.addEventListener( "touchcancel", function() {
+
+    // Move (back) to the current slide
+    window.impress().goto( document.querySelector( "#impress .step.active" ) );
+  } );
+
+} )( document, window );
+</script>
+<script>
+
+var ids = $('.step').map(function(){
+  return this.id;
+}).get();
+// console.log(ids);
+
+for (var i = 0; i < ids.length; i++) {
+  var title = document.getElementById(ids[i]).getAttribute('data-title');
+  console.log(title);
+  if (title !== null) {
+    var $li = $("<li class=\"slidelistli\"></li>").appendTo("#slidelist");
+    var $a = $("<a class=\"slidelink\"></a>").attr("href", ("#"+ids[i])).text("["+ids[i]+ "]" + ' ' +
+    title
+  ).appendTo($li);
+};
+};
+
+var $liultimo = $("<li class=\"slidelistli\"></li>").appendTo("#slidelist");
+var $aaultimo = $("<a ></a>").attr("href", "#overview").text("visão geral").appendTo($liultimo);
+
+</script>
+
+<script>
+$("body").keydown(function(event){
+  if ((event.which == 27)||(event.which == 48)||(event.which == 79)) {
+    if (pover) {
+      impress().goto(lastId);
+      pover = false;
+    }else{
+      impress().goto("overview");
+      pover = true;
+    };
+  }
+});
+</script>
+
+<script>
+//const player = new Plyr('audio', {});
+
+Array.from(document.querySelectorAll('audio')).forEach(audio => {
+  players[audio.id] = new Plyr(audio, { });
+});
+
+Array.from(document.querySelectorAll('video')).forEach(video => {
+  players[video.id] = new Plyr(video, { });
+});
+//player.setup("#player2");
+
+// Expose player so it can be used from the console
+//window.player = player;
+</script>
+<script>
+(function() {
+    var mouseTimer = null, cursorVisible = true;
+
+    function disappearCursor() {
+        mouseTimer = null;
+        document.body.style.cursor = "none";
+        cursorVisible = false;
+    }
+
+    document.onmousemove = function() {
+        if (mouseTimer) {
+            window.clearTimeout(mouseTimer);
+        }
+        if (!cursorVisible) {
+            document.body.style.cursor = "default";
+            cursorVisible = true;
+        }
+        mouseTimer = window.setTimeout(disappearCursor, 1000);
+    };
+})();
+</script>
+<script>
+  if ("ontouchstart" in document.documentElement) { 
+      var hint = document.querySelector(".hint");
+      if (hint) {
+        hint.innerHTML = "<p>Tap on the left or right to navigate</p>";
+      }
+  }
+  // impress().init(); // Initialized in padovanislides.js
+</script>
+</body>
+
+
+<script>
+  // Map slide IDs to their video sources
+  const videoSlides = {
+    "08": "fu_workshop/cristal-red.mp4",
+    "14": "fu_workshop/tijolo.mp4"
+  };
+
+  (function() {
+    // Force ESC to go to overview
+    document.addEventListener("keyup", function (event) {
+        if (event.keyCode === 27) {
+            event.preventDefault();
+            impress().goto("overview");
+        }
+    }, false);
+
+    document.addEventListener("impress:stepenter", function (event) {
+      var step = event.target;
+      var wrapper = document.querySelector('.wrapper');
+      
+      // Check if the current step is one of our video slides
+      if (videoSlides.hasOwnProperty(step.id)) { 
+        var videoSrc = videoSlides[step.id];
+        var videoId = "bg-video-" + step.id;
+        var existingVideo = document.getElementById(videoId);
+
+        // Make wrapper transparent so video shows through
+        if (wrapper) {
+            wrapper.style.transition = "background-color 1s ease-in-out";
+            wrapper.style.backgroundColor = "transparent";
+        }
+        
+        if (!existingVideo) {
+            var video = document.createElement("video");
+            video.id = videoId;
+            video.src = videoSrc; 
+            video.loop = true;
+            video.muted = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            
+            // Fullscreen background styles
+            video.style.position = "fixed";
+            video.style.top = "0";
+            video.style.left = "0";
+            video.style.width = "100vw";
+            video.style.height = "100vh";
+            video.style.objectFit = "cover";
+            video.style.zIndex = "-1"; 
+            video.style.opacity = "0";
+            video.style.transition = "opacity 1s ease-in-out";
+            
+            // Override global padding/margin
+            video.style.padding = "0";
+            video.style.margin = "0";
+            video.style.border = "none";
+            
+            // Append to body so it's behind the transparent wrapper
+            document.body.appendChild(video);
+            
+            // Trigger reflow
+            video.getBoundingClientRect();
+            
+            var playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+              playPromise.then(function() {
+                video.style.opacity = "1";
+              })
+              .catch(function(error) {
+                console.error("Video play error:", error);
+              });
+            } else {
+                video.style.opacity = "1";
+            }
+            
+        } else {
+            existingVideo.style.display = "block";
+            requestAnimationFrame(function() {
+                existingVideo.style.opacity = "1";
+            });
+            existingVideo.play().catch(function(e) { console.error("Resume play error:", e); });
+        }
+      } else {
+          // Restore wrapper background
+          if (wrapper) wrapper.style.backgroundColor = "";
+          
+          // Fade out and remove ALL background videos
+          Object.keys(videoSlides).forEach(function(id) {
+              var vId = "bg-video-" + id;
+              var v = document.getElementById(vId);
+              if (v) {
+                  v.style.opacity = "0";
+                  setTimeout(function() {
+                      if (v.parentNode && v.style.opacity === "0") {
+                          v.parentNode.removeChild(v);
+                      }
+                  }, 1000); 
+              }
+          });
+      }
+    });
+    
+    document.addEventListener("impress:stepleave", function (event) {
+       var step = event.target;
+       // If leaving a video slide, trigger cleanup (though stepenter of next slide handles it too, this is safer for transitions)
+       if (videoSlides.hasOwnProperty(step.id)) {
+          var wrapper = document.querySelector('.wrapper');
+          if (wrapper) wrapper.style.backgroundColor = ""; // Restore background immediately on leave
+          
+          var videoId = "bg-video-" + step.id;
+          var video = document.getElementById(videoId);
+          if (video) {
+              video.style.opacity = "0";
+              setTimeout(function() {
+                  if (video.parentNode && video.style.opacity === "0") {
+                      video.parentNode.removeChild(video);
+                  }
+              }, 1000);
+          }
+       }
+    });
+  })();
+</script>
+
+</html>
